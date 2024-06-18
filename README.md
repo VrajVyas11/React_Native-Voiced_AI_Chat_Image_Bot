@@ -2,4 +2,4 @@
 
 ## Download
 
-[![Download APK](https://img.shields.io/badge/download-APK-brightgreen)](https://drive.google.com/uc?export=download&id=1A2B3C4D5E6F7G8H9I0J)
+[![Download APK](https://img.shields.io/badge/download-APK-brightgreen)](https://drive.google.com/drive/folders/18EZLKTa8wj22wkTtfIMF6hualwC2xpfS?usp=download)
