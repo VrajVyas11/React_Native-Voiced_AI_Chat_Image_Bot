@@ -1,4 +1,4 @@
-export const apiKey='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'
+export const apiKey='yourKey'
 export const dummyMessages=[
     {
         role:'user',
