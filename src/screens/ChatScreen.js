@@ -8,7 +8,7 @@ import { apiKey } from '../constants';
 import axios from 'axios';
 import Tts from 'react-native-tts';
 
-const HomeScreen = () => {
+const ChatScreen = () => {
     const [inputText, setInputText] = useState('');
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -85,8 +85,8 @@ const HomeScreen = () => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-            <View className=" flex-1 bg-white py-4">
-                <SafeAreaView className="flex-1 flex mx-5">
+            <View className=" flex-1 bg-white py-6">
+                <SafeAreaView className="flex-1 flex mx-5 justify-between">
                     <View className="flex-row justify-center">
                        <View className=" bg-slate-200 rounded-full">
                         <Image style={{ width: wp(25), height: wp(25) }} source={require("../../assets/images/chat1.png")} />
@@ -94,10 +94,12 @@ const HomeScreen = () => {
                     </View>
                     {
                         messages.length > 0 ? (
-                            <View className="space-y-2 flex-1">
+                            <View className="space-y-2 flex-1 ">
+                              {/* <View className="w-full justify-center flex items-center"> */}
                                 <Text style={{ fontSize: wp(5) }} className="text-gray-700 font-semibold ml-1">
                                     Assistant
                                 </Text>
+                                {/* </View> */}
                                 <View
                                     style={{ height: hp(58) }}
                                     className="bg-neutral-200 rounded-3xl p-4"
@@ -112,7 +114,7 @@ const HomeScreen = () => {
                                             messages.map((message, index) => (
                                                 <View key={index} className={`flex-row justify-${message.role === "assistant" ? "start" : "end"}`}>
                                                     <View style={{ width: wp(70) }} className={`p-2 rounded-xl ${message.role === "assistant" ? "bg-emerald-100 rounded-tl-none" : "bg-white rounded-tr-none"}`}>
-                                                        <Text>{message.content}</Text>
+                                                        <Text style={{fontWeight:"500",color:"#000000",fontSize:16}}>{message.content}</Text>
                                                     </View>
                                                 </View>
                                             ))
@@ -134,8 +136,9 @@ const HomeScreen = () => {
                         </View>
                     )}
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: "center" }}>
-                            <TextInput
-                                style={{ flex: 1, borderWidth: 1, borderColor: 'gray', padding: 10, borderRadius: 10 }}
+                        <TextInput
+                                style={{ flex: 1, borderWidth: 1, borderColor: 'gray', padding: 10, borderRadius: 10, color: '#000000',fontWeight:"700" }}
+                                placeholderTextColor="Black"
                                 placeholder="Type your message"
                                 value={inputText}
                                 onChangeText={setInputText}
@@ -161,6 +164,6 @@ const HomeScreen = () => {
     );
 };
 
-export default HomeScreen;
+export default ChatScreen;
 
 const styles = StyleSheet.create({});
