@@ -1,4 +1,5 @@
-export const apiKey='yourKey'
+
+export const apiKey=process.env.apiKey
 export const dummyMessages=[
     {
         role:'user',
